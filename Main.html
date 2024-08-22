@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusuf Ülgen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header ve Menü -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Main.html">Home</a></li>
+                <li><a href="aboutme.html">About me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Profil Kartı -->
+    <section class="profile-card">
+        <div class="profile-info">
+            <img src="main.jpg" alt="Yusuf Ülgen" class="profile-pic" id="profilePic">
+            <h1>Yusuf Ülgen</h1>
+            <p>Computer Engineer</p>
+            <p>Contact: yfgogkmg438@gmail.com</p>
+            <p>+90 555 555 55 55</p>
+        </div>
+        <div class="social-icons">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/ysf_ulgen" target="_blank">
+                <img src="instagram_icon.jpg" alt="Instagram">
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/yusuf-ülgen-686a32251" target="_blank">
+                <img src="linkedin_icon.jpg" alt="LinkedIn">
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/yusuff-20" target="_blank">
+                <img src="github_icon.jpg" alt="GitHub">
+            </a>
+        </div>
+    </section>
+
+    <!-- Modal yapısı -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <!-- Hakkımda Bölümü -->
+    <section class="about-me">
+        <div class="info-box"></div>
+        <div class="info-box"></div> <!-- Yeni büyük kutu eklendi -->
+    </section>
+
+    <!-- Portfolio Bölümü -->
+    <section class="portfolio">
+        
+    </section>
+
+    <!-- JavaScript Kodu -->
+    <script>
+    // Modal ve profil resmi seçimi
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("profilePic");
+    var modalImg = document.getElementById("img01");
+
+    // Profil resmine tıklandığında modal'ı göster
+    img.onclick = function(){
+        modal.style.display = "flex"; // Modalı göster ve merkezi hizalama
+        modalImg.src = this.src; // Modal içeriğine resmi ekle
+    }
+
+    // Modal kapanışı
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() { 
+        modal.style.display = "none";
+    }
+
+    // ESC tuşuna basıldığında modal'ı kapat
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") { // ESC tuşunun kodu "Escape"
+            modal.style.display = "none";
+        }
+    });
+        </script>
+</body>
+</html>
