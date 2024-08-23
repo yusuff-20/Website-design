@@ -1,0 +1,98 @@
+/* Sayfanın üst kısmındaki boşluğu kaldır */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* About Me Bölümü */
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    margin-top: 20px; /* Hakkımda bölümünün üstüne boşluk ekle */
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    width: 100%;
+    height: 300px; /* Blokların yüksekliğini 300px yap */
+    background: linear-gradient(to right, #0c0b0b, #b11f1f); /* Arka plan için kırmızı geçiş */
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.info-box h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white; /* Başlıkların altına çizgi */
+    width: fit-content; /* Çizgiyi yazı uzunluğuna göre ayarla */
+    margin: 0 auto; /* Çizgiyi merkeze al */
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.5s; /* Hareket animasyonu */
+}
+
+.info-box p {
+    font-size: 18px;
+    text-align: center; /* Açıklama metnini ortalar */
+    width: 100%;
+    opacity: 0.2; /* Yazıyı saydam yap */
+    transition: opacity 0.5s; /* Saydamlığı animasyonla değiştir */
+}
+
+.transparent-text {
+    opacity: 0.2; /* Başlangıçta saydam */
+}
+
+.info-box.active h2 {
+    transform: translateY(-30px); /* Başlık yukarı kayacak */
+}
+
+.info-box.active p {
+    opacity: 1; /* Yazı normal hale gelecek */
+}
+
+/* Header ve Menü'nün üst boşluğunu kaldır */
+header {
+    margin: 0;
+    padding: 0;
+}
+
+/* Menü stilleri */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #333; /* Arka plan rengi */
+    padding: 10px 0; /* Menü elemanlarının çevresindeki boşluk */
+}
+
+nav ul li {
+    margin: 0 20px; /* Menü elemanları arasındaki boşluk */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
