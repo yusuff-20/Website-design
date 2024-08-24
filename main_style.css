@@ -54,13 +54,14 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 50px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-family: 'Times New Roman', serif; /* Fontu Times New Roman olarak ayarla */
+    font-size: 18px
 }
 
 nav ul li a:hover {
@@ -139,7 +140,7 @@ nav ul li a:hover {
 }
 
 .info-box h2 {
-    font-size: 30px; /* Başlık font boyutunu arttırdık */
+    font-size: 18px; /* Başlık font boyutunu arttırdık */
     margin-bottom: 20px;
     width: auto;
     text-align: center;

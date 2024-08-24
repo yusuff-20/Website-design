@@ -1,20 +1,19 @@
 // JavaScript kodu - aboutme_script.js
 
-// "Hakkımda" başlığına tıklama olayını dinle
-document.querySelector('.info-box h2').addEventListener('click', function() {
-    // Başlığı yukarı kaydır ve metni görünür hale getir
-    const infoBox = this.parentElement;
-    const paragraph = infoBox.querySelector('p');
-    
-    // Başlığı yukarı kaydır
-    this.style.transform = 'translateY(-50px)';
-    this.style.opacity = '0';
-    
-    // Metni görünür hale getir
-    paragraph.style.opacity = '1';
-});
+// Tüm başlıklar için tıklama olayını dinle
+document.querySelectorAll('.info-box h2').forEach(function(title) {
+    title.addEventListener('click', function() {
+        // Bağlı olduğu info-box'ı al
+        const infoBox = this.parentElement;
 
-document.getElementById('hakkimda-title').addEventListener('click', function() {
-    const hakkimdaBox = document.getElementById('hakkimda-box');
-    hakkimdaBox.classList.toggle('active'); // Tıklanınca active sınıfı eklenip çıkarılacak
+        // active sınıfını ekleyip çıkar
+        if (!infoBox.classList.contains('active')) {
+            infoBox.classList.add('active');
+
+            // Başlığı kaybetmek için animasyonu tetikle
+            setTimeout(() => {
+                this.style.display = 'none';
+            }, 500); // CSS animasyon süresiyle eşleştirildi (0.5s)
+        }
+    });
 });

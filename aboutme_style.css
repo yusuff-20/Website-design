@@ -33,6 +33,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gölge efekti */
     margin-bottom: 20px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .info-box h2 {
@@ -43,23 +46,23 @@ body {
     margin: 0 auto; /* Çizgiyi merkeze al */
     padding-bottom: 10px;
     cursor: pointer;
-    transition: transform 0.5s; /* Hareket animasyonu */
+    transition: transform 0.5s, opacity 0.5s; /* Hareket ve saydamlık animasyonu */
 }
 
 .info-box p {
     font-size: 18px;
     text-align: center; /* Açıklama metnini ortalar */
     width: 100%;
-    opacity: 0.2; /* Yazıyı saydam yap */
+    opacity: 0.2; /* Yazıyı başlangıçta saydam yap */
     transition: opacity 0.5s; /* Saydamlığı animasyonla değiştir */
-}
-
-.transparent-text {
-    opacity: 0.2; /* Başlangıçta saydam */
+    position: absolute; /* Yazıları blok ortasında tut */
+    top: 50%; /* Yazıları blok ortasında tut */
+    transform: translateY(-50%); /* Yazıları blok ortasında tut */
 }
 
 .info-box.active h2 {
-    transform: translateY(-30px); /* Başlık yukarı kayacak */
+    transform: translateY(-50px); /* Başlık yukarı kayacak */
+    opacity: 0; /* Başlık kaybolacak */
 }
 
 .info-box.active p {
