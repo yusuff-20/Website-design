@@ -38,35 +38,28 @@ body {
     align-items: center;
 }
 
+/* Başlıklar için yeni stil */
 .info-box h2 {
-    font-size: 25px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid white; /* Başlıkların altına çizgi */
-    width: fit-content; /* Çizgiyi yazı uzunluğuna göre ayarla */
-    margin: 0 auto; /* Çizgiyi merkeze al */
-    padding-bottom: 10px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 35px;
+    color: #fff;
     cursor: pointer;
     transition: transform 0.5s, opacity 0.5s; /* Hareket ve saydamlık animasyonu */
 }
 
+/* Metinler için yeni stil */
 .info-box p {
     font-size: 18px;
-    text-align: center; /* Açıklama metnini ortalar */
+    text-align: center;
     width: 100%;
-    opacity: 0.2; /* Yazıyı başlangıçta saydam yap */
-    transition: opacity 0.5s; /* Saydamlığı animasyonla değiştir */
-    position: absolute; /* Yazıları blok ortasında tut */
-    top: 50%; /* Yazıları blok ortasında tut */
-    transform: translateY(-50%); /* Yazıları blok ortasında tut */
-}
-
-.info-box.active h2 {
-    transform: translateY(-50px); /* Başlık yukarı kayacak */
-    opacity: 0; /* Başlık kaybolacak */
-}
-
-.info-box.active p {
-    opacity: 1; /* Yazı normal hale gelecek */
+    opacity: 0.1; /* Başlangıçta daha saydam */
+    transition: opacity 0.5s ease;
+    position: relative;
+    z-index: 1; /* Metni başlığın arkasına gönder */
 }
 
 /* Header ve Menü'nün üst boşluğunu kaldır */
@@ -98,4 +91,14 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+/* Bloklar tıklandığında değişen stiller */
+.info-box.active h2 {
+    transform: translateY(-50px); /* Başlık yukarı kayacak */
+    opacity: 0; /* Başlık kaybolacak */
+}
+
+.info-box.active p {
+    opacity: 1; /* Yazı normal hale gelecek */
 }
